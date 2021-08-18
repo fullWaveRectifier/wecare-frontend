@@ -12,4 +12,8 @@ export class CoachService {
   coachLogin(body):Observable<any>{
     return this.http.post(this.baseURL+"/coaches/login", body)
   }
+
+  getAllCoaches(): Observable<any> {
+    return this.http.get(this.baseURL + "/coaches/all")
+  }
 }
