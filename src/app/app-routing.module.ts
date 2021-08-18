@@ -7,6 +7,7 @@ import { SignUpComponentComponent } from './sign-up-component/sign-up-component.
 import { BookingComponent } from './user-home-page/booking/booking.component';
 import { RescheduleComponent } from './user-home-page/reschedule/reschedule.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
+import { UserViewProfileComponent } from './user-home-page/user-view-profile/user-view-profile.component';
 
 const routes: Routes = [
   {path:'user/:userId/booking/:coachId',component:BookingComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'userhome', component:UserHomePageComponent},
   {path:'signup/:type', component:SignUpComponentComponent},
   {path:'coachhome',component:CoachHomePageComponent},
+  {path: "userviewprofile", component: UserViewProfileComponent},
   {path:'', redirectTo:'/home', pathMatch:'full'}
 ];
 

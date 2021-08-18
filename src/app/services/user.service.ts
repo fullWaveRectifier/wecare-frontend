@@ -13,4 +13,8 @@ export class UserService {
   userLogin(body):Observable<any>{
     return this.http.post(this.baseURL+"/users/login", body)
   }
+
+  getUserByIDd(id: string): Observable<any> {
+        return this.http.get(this.baseURL + "/users/" + id)
+  }
 }
