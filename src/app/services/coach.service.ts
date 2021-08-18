@@ -12,4 +12,7 @@ export class CoachService {
   coachLogin(body):Observable<any>{
     return this.http.post(this.baseURL+"/coaches/login", body)
   }
+  getCoachSchedule(coachId):Observable<any>{
+    return this.http.get(this.baseURL+"/coaches/bookings/"+coachId)   
+  }
 }
