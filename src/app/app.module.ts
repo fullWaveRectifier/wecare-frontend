@@ -10,7 +10,11 @@ import { SignUpComponentComponent } from './sign-up-component/sign-up-component.
 import { LogInComponentComponent } from './log-in-component/log-in-component.component';
 import { CoachHomePageComponent } from './coach-home-page/coach-home-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
+<<<<<<< HEAD
 import { UserViewProfileComponent } from './user-home-page/user-view-profile/user-view-profile.component';
+=======
+import { BookingComponent } from './user-home-page/booking/booking.component';
+>>>>>>> 3bc739650f4086bb38843a2ddf2872fe5e55b818
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { UserViewProfileComponent } from './user-home-page/user-view-profile/use
     LogInComponentComponent,
     CoachHomePageComponent,
     UserHomePageComponent,
+<<<<<<< HEAD
     UserViewProfileComponent
+=======
+    BookingComponent
+>>>>>>> 3bc739650f4086bb38843a2ddf2872fe5e55b818
   ],
   imports: [
     BrowserModule,
