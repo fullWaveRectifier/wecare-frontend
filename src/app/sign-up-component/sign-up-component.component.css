@@ -3,19 +3,12 @@
     color: red
 }
 .body{
-    width: 50%;
+    max-width: 500px;
     background-color: black;
     color: white;
-    border-radius: 25px;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    border-radius: 15px;
     padding: 20px;
-    overflow:hidden;
-    height:auto;
-    max-height:1000px;
-    
+    margin: 1rem auto 0 auto;
 }
 .container{
     margin-bottom: 1rem;
