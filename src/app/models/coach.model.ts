@@ -3,7 +3,7 @@ export class Coach {
         public coachId: string,
         public name: string,
         public gender: string,
-        public date_of_birth: string,
+        public dateOfBirth: string,
         public password: string,
         public mobile_number: number,
         public speciality: string,

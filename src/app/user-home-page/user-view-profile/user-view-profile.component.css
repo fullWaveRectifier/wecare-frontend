@@ -1,0 +1,35 @@
+.user-image > img {
+    width: 160px;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 500px;
+    margin: 3rem auto auto auto;
+}
+
+.user-info {
+    line-height: 0.5px;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
