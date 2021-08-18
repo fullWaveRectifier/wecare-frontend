@@ -19,7 +19,10 @@
 }
 
 .user-info {
-    line-height: 0.5px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 0.7px;
+    margin-top: 1rem;
 }
 
 .arrow {
@@ -32,4 +35,10 @@
   .left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+  }
+
+  .btn {
+    display:      block;
+    margin-left:  auto;
+    margin-right: 0;
   }
