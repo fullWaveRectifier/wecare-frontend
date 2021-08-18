@@ -10,6 +10,7 @@ export class CoachHomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("userId"))
   }
 
 }
