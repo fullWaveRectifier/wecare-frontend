@@ -4,9 +4,13 @@ import { CoachHomePageComponent } from './coach-home-page/coach-home-page.compon
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LogInComponentComponent } from './log-in-component/log-in-component.component';
 import { SignUpComponentComponent } from './sign-up-component/sign-up-component.component';
+import { BookingComponent } from './user-home-page/booking/booking.component';
+import { RescheduleComponent } from './user-home-page/reschedule/reschedule.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 
 const routes: Routes = [
+  {path:'user/:userId/booking/:coachId',component:BookingComponent},
+  {path:'bookings/:bookingId',component:RescheduleComponent},
   {path:'home',component:HomeComponentComponent},
   {path:'login/:type', component:LogInComponentComponent},
   {path:'userhome', component:UserHomePageComponent},

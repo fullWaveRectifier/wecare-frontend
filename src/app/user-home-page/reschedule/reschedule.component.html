@@ -1,7 +1,7 @@
 <div class="container ">
   <div>
   <form [formGroup]="bookAppointmentForm" *ngIf="!submitted || isError">
-    <h2 class="mb-3"><span><img class="card-img-top" src="./../../../assets/Images/Notepad_icon.svg.png" alt="Card image cap"></span>Proceed with your Appointment</h2>
+    <h2 class="mb-3"><span><img class="card-img-top" src="./../../../assets/Images/Notepad_icon.svg.png" alt="Card image cap"></span>Reschedule your Appointment</h2>
     <div class="form-group">
       <label class="slot-label">Date of Appointment</label>
       <input type="date" class="form-control" id="DateOfAppointment" name="DateOfAppointment" formControlName="DateOfAppointment">
@@ -37,7 +37,7 @@
           <label for="sixth">4PM to 5PM</label>
       </div>
     </div>
-    <button type="submit" [disabled]="!bookAppointmentForm.valid" (click)="register()" class="btn btn-success">Confirm your Appointment</button>
+    <button type="submit" [disabled]="!bookAppointmentForm.valid" (click)="register()" class="btn btn-success">Reschedule your Appointment</button>
     <p *ngIf="isError" class=text-danger>You already have an appointment in this slot</p> 
   </form>
   </div>

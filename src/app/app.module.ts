@@ -11,6 +11,7 @@ import { LogInComponentComponent } from './log-in-component/log-in-component.com
 import { CoachHomePageComponent } from './coach-home-page/coach-home-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { BookingComponent } from './user-home-page/booking/booking.component';
+import { RescheduleComponent } from './user-home-page/reschedule/reschedule.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookingComponent } from './user-home-page/booking/booking.component';
     LogInComponentComponent,
     CoachHomePageComponent,
     UserHomePageComponent,
-    BookingComponent
+    BookingComponent,
+    RescheduleComponent
   ],
   imports: [
     BrowserModule,
