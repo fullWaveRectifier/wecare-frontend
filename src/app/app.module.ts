@@ -10,6 +10,7 @@ import { SignUpComponentComponent } from './sign-up-component/sign-up-component.
 import { LogInComponentComponent } from './log-in-component/log-in-component.component';
 import { CoachHomePageComponent } from './coach-home-page/coach-home-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
+import { BookingComponent } from './user-home-page/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserHomePageComponent } from './user-home-page/user-home-page.component
     SignUpComponentComponent,
     LogInComponentComponent,
     CoachHomePageComponent,
-    UserHomePageComponent
+    UserHomePageComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
