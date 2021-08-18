@@ -5,6 +5,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { LogInComponentComponent } from './log-in-component/log-in-component.component';
 import { SignUpComponentComponent } from './sign-up-component/sign-up-component.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
+import { UserViewProfileComponent } from './user-home-page/user-view-profile/user-view-profile.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponentComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'userhome', component:UserHomePageComponent},
   {path:'signup/:type', component:SignUpComponentComponent},
   {path:'coachhome',component:CoachHomePageComponent},
+  {path: "userviewprofile", component: UserViewProfileComponent},
   {path:'', redirectTo:'/home', pathMatch:'full'}
 ];
 
