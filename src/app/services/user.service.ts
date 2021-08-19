@@ -13,4 +13,8 @@ export class UserService {
   userLogin(body):Observable<any>{
     return this.http.post(this.baseURL+"/users/login", body)
   }
+
+  getUserAppointments(userId):Observable<any>{
+    return this.http.get(this.baseURL+"/users/bookings" + userId)
+  }
 }
