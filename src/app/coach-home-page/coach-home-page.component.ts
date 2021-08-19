@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CoachService } from '../services/coach.service';
 
 @Component({
@@ -8,23 +9,28 @@ import { CoachService } from '../services/coach.service';
 })
 export class CoachHomePageComponent implements OnInit {
   appointments
-  userId
+  coachId
   
   isAppointmentspresent: boolean = false
-  constructor(private coachService:CoachService) {
-    this.userId=localStorage.getItem("userId")
-    coachService.getCoachSchedule(this.userId).subscribe((success)=>{
+
+  constructor(private coachService:CoachService, private router: Router) {
+    this.coachId=localStorage.getItem("coachId")
+    coachService.getCoachSchedule(this.coachId).subscribe((success)=>{
       this.appointments=success
       this.isAppointmentspresent=this.appointments.length>0
     })
    }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem("userId"))
+    const coachId = localStorage.getItem("coachId");
+    if (!coachId) this.router.navigate(["/login/coach"])
     this.appointments = [
-      
     ]
     this.isAppointmentspresent = this.appointments.length >0
   }
+
+
+
+
 
 }
