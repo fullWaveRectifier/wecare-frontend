@@ -14,7 +14,8 @@ export class CoachViewProfileComponent implements OnInit {
   constructor(private userService: CoachService) { }
 
   ngOnInit() {
-    this.getCoachById("1");  
+    const coachId = localStorage.getItem("coachId");
+    this.getCoachById(coachId);  
   }
 
   getCoachById(id: string) {

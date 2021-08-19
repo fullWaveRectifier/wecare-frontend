@@ -1,7 +1,8 @@
 <div class="container container-md">
   <div *ngFor="let coach of coaches" class="user-card">
     <div class="coach-image">
-      <img src="../../assets/Images/male-1354358_960_720.png" alt="">
+      <img *ngIf="coach.gender=='M'" src="../../assets/Images/male.png" alt="">
+      <img *ngIf="coach.gender=='F'" src="../../assets/Images/male-1354358_960_720.png" alt="">
     </div>
     <div class="coach-info">
       <h3 class="date-heading">{{coach.name}}</h3>
