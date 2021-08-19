@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,12 +8,13 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./appointments.component.css']
 })
 export class AppointmentsComponent implements OnInit {
-  appointments
-  userId
+  appointments;
+  userId:string;
   isAppointmentspresent: boolean = false
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService,private router: Router) {
     this.userId=localStorage.getItem("userId")
+    console.log(this.userId);
     userService.getUserAppointments(this.userId).subscribe((success)=>{
       this.appointments=success
       this.isAppointmentspresent=this.appointments.length>0
@@ -20,17 +22,9 @@ export class AppointmentsComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
 
-  //   this.appointments=
-  //   [
-  //   {
-  //       "bookingId":0,
-  //       "coachId":"1",
-  //       "userId":"1",
-  //       "slot":"2-3",
-  //       "appointmentDate":"2018-06-14"
-  //   }
-  //   ]
-  //   this.isAppointmentspresent=this.appointments.length>0
-   }
+  rescheduleAppointment(bookingId: string){
+    this.router.navigate([`/bookings/${bookingId}`]);
+  }
 }

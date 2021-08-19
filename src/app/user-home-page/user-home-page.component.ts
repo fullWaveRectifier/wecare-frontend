@@ -10,6 +10,7 @@ import { CoachService } from '../services/coach.service';
 })
 export class UserHomePageComponent implements OnInit {
   coaches: Coach[] = [];
+  userId: string;
 
   constructor(private route:ActivatedRoute, private router:Router, private coachservice: CoachService) {
   
@@ -17,8 +18,8 @@ export class UserHomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCoaches();
-    const userId = localStorage.getItem("userId");
-    if(!userId) this.router.navigate(["/login/user"])
+    this.userId = localStorage.getItem("userId");
+    if(!this.userId) this.router.navigate(["/login/user"])
   }
 
   getAllCoaches() {
@@ -26,6 +27,11 @@ export class UserHomePageComponent implements OnInit {
        console.log(result)
        this.coaches = result;
      })
+  }
+
+  bookAppointment(coachId: string){
+    let url = `/user/${this.userId}/booking/${coachId}`;
+    this.router.navigate([url]);
   }
 }
 

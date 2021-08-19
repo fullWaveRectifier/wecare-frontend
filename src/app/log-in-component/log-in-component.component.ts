@@ -29,7 +29,7 @@ export class LogInComponentComponent implements OnInit {
     this.coachService.coachLogin(this.loginform.value).subscribe((result)=>{
       this.errorStatus = result;
       if(this.errorStatus){
-        localStorage.setItem("userId",this.loginform.controls.id.value)
+        localStorage.setItem("coachId",this.loginform.controls.id.value)
         this.router.navigate(["/coachhome"])
       }
     })

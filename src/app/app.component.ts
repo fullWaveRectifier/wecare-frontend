@@ -16,7 +16,7 @@ export class AppComponent {
       this.logout = false
       this.uProfile = false
       this.cProfile = false
-      if (router.url == "/userhome" || router.url == "/userviewprofile" || router.url=="/userappointments") {
+      if (router.url == "/userhome" || router.url == "/userviewprofile" || router.url=="/userappointments" || router.url.includes("user") || router.url.includes("bookings")) {
         this.logout = true
         this.uProfile = true
         this.cProfile = false
@@ -35,7 +35,8 @@ export class AppComponent {
   }
 
   logoutFn(){
-    localStorage.removeItem('userId')
+    localStorage.removeItem('userId');
+    localStorage.removeItem('coachId');    
   }
 
 }

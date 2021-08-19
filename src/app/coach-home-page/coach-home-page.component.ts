@@ -23,10 +23,11 @@ export class CoachHomePageComponent implements OnInit {
 
   ngOnInit(): void {
     const coachId = localStorage.getItem("coachId");
-    if (!coachId) this.router.navigate(["/login/coach"])
-    this.appointments = [
-    ]
-    this.isAppointmentspresent = this.appointments.length >0
+    console.log(coachId);
+    // if (!coachId) this.router.navigate(["/login/coach"])
+    // this.appointments = [
+    // ]
+    // this.isAppointmentspresent = this.appointments.length >0
   }
 
 

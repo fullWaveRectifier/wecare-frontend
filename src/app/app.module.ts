@@ -11,10 +11,10 @@ import { LogInComponentComponent } from './log-in-component/log-in-component.com
 import { CoachHomePageComponent } from './coach-home-page/coach-home-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { UserViewProfileComponent } from './user-home-page/user-view-profile/user-view-profile.component';
+import { CoachViewProfileComponent } from './coach-home-page/coach-view-profile/coach-view-profile.component';
 import { BookingComponent } from './user-home-page/booking/booking.component';
 import { RescheduleComponent } from './user-home-page/reschedule/reschedule.component';
 import { AppointmentsComponent } from './user-home-page/appointments/appointments.component';
-import { CoachViewProfileComponent } from './coach-home-page/coach-view-profile/coach-view-profile.component';
 
 @NgModule({
   declarations: [

@@ -15,7 +15,7 @@ export class UserService {
   }
 
   getUserAppointments(userId):Observable<any>{
-    return this.http.get(this.baseURL+"/users/bookings/" + userId)
+    return this.http.get(this.baseURL+"/users/booking/" + userId)
   }
 
   getUserById(id: string): Observable<any> {

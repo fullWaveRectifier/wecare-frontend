@@ -10,7 +10,7 @@
                   Booking Id: {{appointment.bookingId}} <br>
                   User Id: {{appointment.userId}} <br>
                   Coach Id: {{appointment.coachId}} <br>
-                  <button class="btn btn-primary" >Reschedule Appointment</button>
+                  <button (click)="rescheduleAppointment(appointment.bookingId)" class="btn btn-primary" >Reschedule Appointment</button>
                   <button class="btn btn-danger" >Cancel Appointment</button>
               </div>
           </div>

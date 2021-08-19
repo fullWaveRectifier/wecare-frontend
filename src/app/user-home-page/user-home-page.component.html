@@ -10,7 +10,7 @@
         <p class="booking-id">Mobile Number: {{coach.mobile_number}}</p>
         <p class="user-id">Speciality: {{coach.speciality}}</p>
       </div>
-      <button class="btn btn-primary">Schedule Appointment</button>
+      <button (click)="bookAppointment(coach.coachId)" class="btn btn-primary">Schedule Appointment</button>
     </div>
 </div>
 

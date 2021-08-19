@@ -30,7 +30,8 @@ export class BookingComponent implements OnInit {
   register(){
     console.log(this.bookAppointmentForm.value);
     this.submitted=true;
-    let bookingObj: Booking = new Booking(this.coachId,this.userId,this.bookAppointmentForm.controls.DateOfAppointment.value,this.bookAppointmentForm.controls.Slot.value);
+    let bookingObj: Booking = new Booking(this.bookAppointmentForm.controls.DateOfAppointment.value,this.bookAppointmentForm.controls.Slot.value,this.coachId,this.userId);
+    console.log(bookingObj);
     this.bookingService.bookAppointment(bookingObj).subscribe(
       success => {console.log("book"+success);
                   if(success.hasOwnProperty('errorCode')){
