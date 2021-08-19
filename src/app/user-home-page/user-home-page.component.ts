@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Coach } from '../models/coach.model';
+import { CoachService } from '../services/coach.service';
 
 @Component({
   selector: 'app-user-home-page',
@@ -7,46 +9,23 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-home-page.component.css']
 })
 export class UserHomePageComponent implements OnInit {
-  appointments
-  userId
-  isAppointmentspresent: boolean = false
 
-  constructor(private userService:UserService) {
-    this.userId=localStorage.getItem("userId")
-    userService.getUserAppointments(this.userId).subscribe((success)=>{
-      this.appointments=success
-      this.isAppointmentspresent=this.appointments.length>0
-    })
+  coaches: Coach[] = [new Coach("sfsdf", "efsdf", "dfedf", "sdf", "sdf", 2323, "asdf")];
+
+  constructor(private route:ActivatedRoute, private router:Router, private coachservice: CoachService) {
+  
    }
 
   ngOnInit(): void {
-    this.appointments=
-    [
-    {
-        "bookingId":0,
-        "coachId":"1",
-        "userId":"1",
-        "slot":"2-3",
-        "appointmentDate":"2018-06-14"
-    },
-    {
-      "bookingId":0,
-      "coachId":"1",
-      "userId":"1",
-      "slot":"2-3",
-      "appointmentDate":"2018-06-14"
-   },
-   {
-    "bookingId":0,
-    "coachId":"1",
-    "userId":"1",
-    "slot":"2-3",
-    "appointmentDate":"2018-06-14"
-    }
-    ]
-     this.isAppointmentspresent=this.appointments.length>0
+    this.getAllCoaches();
   }
 
+  getAllCoaches() {
+     this.coachservice.getAllCoaches().subscribe((result)=>{
+       console.log(result)
+       this.coaches = result;
+     })
+  }
 }
 
   

@@ -1,27 +1,44 @@
-<div class="container">
-    <div class="row"  *ngIf="isAppointmentspresent">
-            <div class="card center" style="width: 18rem;" *ngFor="let appointment of appointments">
-                <div class="card-title">
-                    Appointment Date: {{appointment.appointmentDate}} <br>
-                    Slot:{{appointment.slot}}
-                </div>
+<div class="container container-md">
+  <div *ngFor="let coach of coaches" class="user-card">
+    <div class="coach-image">
+      <img src="../../assets/Images/male-1354358_960_720.png" alt="">
+    </div>
+    <div class="coach-info">
+      <h3 class="date-heading">{{coach.name}}</h3>
+      <h4 class="date">{{coach.coachId}}</h4>
+      <div class="ids">
+        <p class="booking-id">Mobile Number: {{coach.mobile_number}}</p>
+        <p class="user-id">Speciality: {{coach.speciality}}</p>
+      </div>
+      <button class="btn btn-primary">Schedule Appointment</button>
+    </div>
+</div>
 
-                <div class="card-body">
-                    Booking Id: {{appointment.bookingId}} <br>
-                    User Id: {{appointment.userId}} <br>
-                    Coach Id: {{appointment.coachId}} <br>
-                    <button class="btn btn-primary" >Reschedule Appointment</button>
-                    <button class="btn btn-danger" >Cancel Appointment</button>
-                </div>
-            </div>
+<!-- <div class="user-card">
+  <div class="coach-image">
+    <img src="../../assets/Images/male-1354358_960_720.png" alt="">
+  </div>
+  <div class="coach-info">
+    <h2 class="date-heading">Rose</h2>
+    <h3 class="date">CL3434D</h3>
+    <div class="ids">
+      <p class="booking-id">Booking ID: 3434</p>
+      <p class="user-id">User ID: 3434</p>
     </div>
-    <div class="row error" *ngIf="!isAppointmentspresent">
-            <img src="assets/Images/Notepad_icon.svg.png" alt="img"> <br>
-            <h1>
-                You haven't made any appointments yet
-            </h1>
-            <a class='btn btn-default backbtnpos' (click)='onBack()'>
-                 <i class='glyphicon glyphicon-chevron-left'></i> Back
-            </a>
+  </div>
+</div>
+
+<div class="user-card">
+  <div class="coach-image">
+    <img src="../../assets/Images/male-1354358_960_720.png" alt="">
+  </div>
+  <div class="coach-info">
+    <h2 class="date-heading">Rose</h2>
+    <h3 class="date">CL3434D</h3>
+    <div class="ids">
+      <p class="booking-id">Booking ID: 3434</p>
+      <p class="user-id">User ID: 3434</p>
     </div>
+  </div>
+</div> -->
 </div>
