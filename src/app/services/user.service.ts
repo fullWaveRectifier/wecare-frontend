@@ -13,4 +13,9 @@ export class UserService {
   userLogin(body):Observable<any>{
     return this.http.post(this.baseURL+"/users/login", body)
   }
+
+  userRegister(data1) : Observable<any>{
+    data1.userId="U1832020922222668";
+    return this.http.post(this.baseURL+"/users", data1);
+  }
 }

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators'
+import { Coach } from '../models/coach.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +17,13 @@ export class CoachService {
 
   getAllCoaches(): Observable<any> {
     return this.http.get(this.baseURL + "/coaches/all")
+  }
+
+  coachRegister(data1:Coach) : Observable<any> {
+    // alert(JSON.stringify(data));
+   //Consume the exposed REST api from http://localhost:1020/bookFlight
+   data1.coachId="user1235685222"
+    return this.http.post(this.baseURL+"/coaches",data1).pipe(tap(data => console.log('Data Fetched:'+data)));
+
   }
 }
