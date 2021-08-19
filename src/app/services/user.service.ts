@@ -14,7 +14,7 @@ export class UserService {
     return this.http.post(this.baseURL+"/users/login", body)
   }
 
-  getUserByIDd(id: string): Observable<any> {
+  getUserById(id: string): Observable<any> {
         return this.http.get(this.baseURL + "/users/" + id)
   }
 }

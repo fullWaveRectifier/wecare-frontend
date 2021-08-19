@@ -9,15 +9,18 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserViewProfileComponent implements OnInit {
   user: User;
+  userId: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+    this.userId=localStorage.getItem("userId");
+   }
 
   ngOnInit() {
-    this.getUserById("1");  
+    this.getUserById(this.userId);  
   }
 
   getUserById(id: string) {
-    this.userService.getUserByIDd(id).subscribe((result)=>{
+    this.userService.getUserById(id).subscribe((result)=>{
       console.log(result)
       this.user = result;
   })
