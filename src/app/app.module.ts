@@ -13,6 +13,7 @@ import { UserHomePageComponent } from './user-home-page/user-home-page.component
 import { UserViewProfileComponent } from './user-home-page/user-view-profile/user-view-profile.component';
 import { BookingComponent } from './user-home-page/booking/booking.component';
 import { RescheduleComponent } from './user-home-page/reschedule/reschedule.component';
+import { CoachViewProfileComponent } from './coach-home-page/coach-view-profile/coach-view-profile.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RescheduleComponent } from './user-home-page/reschedule/reschedule.comp
     BookingComponent,
     RescheduleComponent,
     UserViewProfileComponent,
+    CoachViewProfileComponent,
   ],
   imports: [
     BrowserModule,

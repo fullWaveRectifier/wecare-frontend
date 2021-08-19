@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CoachHomePageComponent } from './coach-home-page/coach-home-page.component';
+import { CoachViewProfileComponent } from './coach-home-page/coach-view-profile/coach-view-profile.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LogInComponentComponent } from './log-in-component/log-in-component.component';
 import { SignUpComponentComponent } from './sign-up-component/sign-up-component.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'signup/:type', component:SignUpComponentComponent},
   {path:'coachhome',component:CoachHomePageComponent},
   {path: "userviewprofile", component: UserViewProfileComponent},
+  {path: "coachviewprofile", component: CoachViewProfileComponent},
   {path:'', redirectTo:'/home', pathMatch:'full'}
 ];
 
