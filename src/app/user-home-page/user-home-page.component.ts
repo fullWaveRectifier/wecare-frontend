@@ -15,7 +15,8 @@ export class UserHomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCoaches();
-
+    const userId = localStorage.getItem("userId");
+    if(!userId) this.router.navigate(["/login/user"])
   }
 
   getAllCoaches() {
