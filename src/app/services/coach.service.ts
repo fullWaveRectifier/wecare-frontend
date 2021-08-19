@@ -14,11 +14,14 @@ export class CoachService {
   }
 
   getCoachSchedule(coachId):Observable<any>{
-    return this.http.get(this.baseURL+"/coaches/bookings/"+coachId)   
+    return this.http.get(this.baseURL+"/coaches/booking/"+coachId)   
   }
 
   getAllCoaches(): Observable<any> {
     return this.http.get(this.baseURL + "/coaches/all")
+  }
 
+  getCoachById(id: string): Observable<any> {
+    return this.http.get(this.baseURL + "/coaches/" + id)
   }
 }

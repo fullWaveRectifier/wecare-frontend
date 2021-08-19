@@ -9,8 +9,7 @@ import { CoachService } from '../services/coach.service';
   styleUrls: ['./user-home-page.component.css']
 })
 export class UserHomePageComponent implements OnInit {
-
-  coaches: Coach[] = [new Coach("sfsdf", "efsdf", "dfedf", "sdf", "sdf", 2323, "asdf")];
+  coaches: Coach[] = [];
 
   constructor(private route:ActivatedRoute, private router:Router, private coachservice: CoachService) {
   
@@ -18,6 +17,8 @@ export class UserHomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCoaches();
+    const userId = localStorage.getItem("userId");
+    if(!userId) this.router.navigate(["/login/user"])
   }
 
   getAllCoaches() {
