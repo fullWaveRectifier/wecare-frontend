@@ -11,6 +11,7 @@
     overflow:hidden;
     height:auto;
     max-height:600px;
+    min-width: 300px;
 }
 .body.collapsed{
     animation: formAnimation .5s ease-in-out;

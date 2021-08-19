@@ -9,7 +9,7 @@ import { CoachService } from '../services/coach.service';
   styleUrls: ['./user-home-page.component.css']
 })
 export class UserHomePageComponent implements OnInit {
-  coaches: Coach[] = [new Coach("sfsdf", "efsdf", "dfedf", "sdf", "sdf", 2323, "asdf")];
+  coaches: Coach[] = [];
 
   constructor(private route:ActivatedRoute, private router:Router, private coachservice: CoachService) { }
 
