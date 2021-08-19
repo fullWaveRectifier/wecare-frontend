@@ -9,6 +9,7 @@ import { Coach } from '../models/coach.model';
 })
 export class CoachService {
   baseURL = "http://localhost:8081"
+  coachIds=""
   constructor(private http: HttpClient) { }
 
   coachLogin(body):Observable<any>{
@@ -22,7 +23,9 @@ export class CoachService {
   coachRegister(data1:Coach) : Observable<any> {
     // alert(JSON.stringify(data));
    //Consume the exposed REST api from http://localhost:1020/bookFlight
-   data1.coachId="user1235685222"
+   let a=Math.floor(Math.random() * 100)
+   data1.coachId="LC24320201946122545"+a;
+   this.coachIds=data1.coachId;
     return this.http.post(this.baseURL+"/coaches",data1).pipe(tap(data => console.log('Data Fetched:'+data)));
 
   }

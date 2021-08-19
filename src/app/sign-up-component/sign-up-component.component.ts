@@ -16,8 +16,12 @@ export class SignUpComponentComponent implements OnInit {
   userregisterForm:FormGroup;
   errorMessage: String;
   successMessage: String;
+  isUserRegister:boolean=false;
+  isCoachRegister:boolean=false;
+  coachId=''
+  userId=''
   constructor(private route:ActivatedRoute,private formBuilder: FormBuilder,
-    private coachService: CoachService,private userService:UserService) { }
+    private coachService: CoachService,private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.type = this.route.snapshot.params['type'];
@@ -47,17 +51,26 @@ export class SignUpComponentComponent implements OnInit {
   {
     console.log(this.coachregisterForm.value);
     this.coachService.coachRegister(this.coachregisterForm.value)
-    .subscribe((resp) =>{ console.log("sam"); this.successMessage = resp.message},
+    .subscribe((resp) =>{ console.log("sam");
+    this.isCoachRegister=true;
+     this.successMessage = resp.message;
+     this.coachId=this.coachService.coachIds}
+     ,
     
      (err: any) => this.errorMessage = err.error.message);
-
+     
+     this.isCoachRegister=true;
+     this.coachId=this.coachService.coachIds
+     
   }
 
   userregister()
   {
     console.log(this.userregisterForm.value);
     this.userService.userRegister(this.userregisterForm.value).subscribe(
-      (resp)=>this.successMessage=resp.message,
+      (resp)=>{this.successMessage=resp.message;
+        this.isUserRegister=true;
+        this.userId=this.userService.userIds},
       (err)=>this.errorMessage=err.error.message);
       if(this.successMessage!=undefined)
       {
@@ -67,7 +80,8 @@ export class SignUpComponentComponent implements OnInit {
         console.log("fff")
         console.log(this.successMessage);
       }
-      
+      this.isUserRegister=true;
+      this.userId=this.userService.userIds
 
   }
 
@@ -86,4 +100,13 @@ export class SignUpComponentComponent implements OnInit {
     
     return null;
   }
+  gotocoachlogin()
+  {
+ this.router.navigate(["/login/coach"]);
+  }
+  gotouserlogin()
+  {
+ this.router.navigate(["/login/user"]);
+  }
+
 }

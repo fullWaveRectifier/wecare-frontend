@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [hidden]="isCoachRegister||isUserRegister">
     <div class="body">
         <div class="row">
             <div *ngIf="type == 'coach'" class="heading">
@@ -10,20 +10,21 @@
                 User Profile
             </div>
         </div>
-        <!-- <form [formGroup]="loginform" > -->
+        
         <form [formGroup]="userregisterForm" *ngIf="type =='user'">
             <div class="row">
                 <div class="col-sm-6">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" formControlName="name">
-                    <p *ngIf="userregisterForm.controls.name.touched && userregisterForm.controls.name.errors" 
-                    class="error-message">The name should have 3 to 50 characters
+                    <p *ngIf="userregisterForm.controls.name.touched && userregisterForm.controls.name.errors"
+                        class="error-message">The name should have 3 to 50 characters
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <label for="password">Password</label>
                     <input type="text" class="form-control" id="password" formControlName="password">
-                    <p *ngIf="userregisterForm.controls.password.touched && userregisterForm.controls.password.errors" class="error-message">Please
+                    <p *ngIf="userregisterForm.controls.password.touched && userregisterForm.controls.password.errors"
+                        class="error-message">Please
                         Password should have 5 to 10 characters</p>
                 </div>
             </div>
@@ -31,7 +32,8 @@
                 <div class="col-sm-6">
                     <label for="dateOfBirth">Date Of Birth</label>
                     <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
-                    <p *ngIf="userregisterForm.controls.dateOfBirth.touched && userregisterForm.controls.dateOfBirth.errors" class="error-message">	
+                    <p *ngIf="userregisterForm.controls.dateOfBirth.touched && userregisterForm.controls.dateOfBirth.errors"
+                        class="error-message">
                         Age should be between 20 and 100 years</p>
                 </div>
                 <div class="col-sm-6">
@@ -48,8 +50,8 @@
                             <label class="form-check-label">Female</label>
                         </div>
                     </div>
-                    <p *ngIf="userregisterForm.controls.gender.touched && userregisterForm.controls.gender.errors" 
-                    class="error-message">Field required
+                    <p *ngIf="userregisterForm.controls.gender.touched && userregisterForm.controls.gender.errors"
+                        class="error-message">Field required
                     </p>
                 </div>
             </div>
@@ -57,15 +59,15 @@
                 <div class="col-sm-6">
                     <label for="mobileNumber">Mobile Number</label>
                     <input type="text" class="form-control" id="mobileNumber" formControlName="mobileNumber">
-                    <p *ngIf="userregisterForm.controls.mobileNumber.touched && userregisterForm.controls.mobileNumber.errors" 
-                    class="error-message">Please
+                    <p *ngIf="userregisterForm.controls.mobileNumber.touched && userregisterForm.controls.mobileNumber.errors"
+                        class="error-message">Please
                         Mobile Number should have 10 digits</p>
                 </div>
                 <div class="col-sm-6">
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="email" formControlName="email">
-                    <p *ngIf="userregisterForm.controls.email.touched && userregisterForm.controls.email.errors" 
-                    class="error-message">Field required
+                    <p *ngIf="userregisterForm.controls.email.touched && userregisterForm.controls.email.errors"
+                        class="error-message">Field required
                     </p>
                 </div>
             </div>
@@ -73,15 +75,15 @@
                 <div class="col-sm-6">
                     <label for="pincode">Pincode</label>
                     <input type="text" class="form-control" id="pincode" formControlName="pincode">
-                    <p *ngIf="userregisterForm.controls.pincode.touched && userregisterForm.controls.pincode.errors" 
-                    class="error-message">Pincode should have 6 digits
+                    <p *ngIf="userregisterForm.controls.pincode.touched && userregisterForm.controls.pincode.errors"
+                        class="error-message">Pincode should have 6 digits
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <label for="city">City</label>
                     <input type="text" class="form-control" id="city" formControlName="city">
-                    <p *ngIf="userregisterForm.controls.city.touched && userregisterForm.controls.city.errors" 
-                    class="error-message">The city should have 6 to 20 characters
+                    <p *ngIf="userregisterForm.controls.city.touched && userregisterForm.controls.city.errors"
+                        class="error-message">The city should have 6 to 20 characters
                     </p>
                 </div>
             </div>
@@ -89,35 +91,21 @@
                 <div class="col-sm-6">
                     <label for="state">State</label>
                     <input type="text" class="form-control" id="state" formControlName="state">
-                    <p *ngIf="userregisterForm.controls.state.touched && userregisterForm.controls.state.errors" 
-                    class="error-message">The city should have 6 to 20 characters
+                    <p *ngIf="userregisterForm.controls.state.touched && userregisterForm.controls.state.errors"
+                        class="error-message">The city should have 6 to 20 characters
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <label for="country">Country</label>
                     <input type="text" class="form-control" id="country" formControlName="country">
-                    <p *ngIf="userregisterForm.controls.country.touched && userregisterForm.controls.country.errors" 
-                    class="error-message">The city should have 6 to 20 characters
+                    <p *ngIf="userregisterForm.controls.country.touched && userregisterForm.controls.country.errors"
+                        class="error-message">The city should have 6 to 20 characters
                     </p>
                 </div>
             </div>
-            <!-- <div class="row">
-          <label for="name">Password</label>
-          <input type="password" class="form-control" id="password" formControlName="password"> -->
-            <!-- <p *ngIf="loginform.controls.password.touched && loginform.controls.password.errors" class="text-danger">Please
-            Enter Password</p> -->
-            <!-- </div>
-        <div class="row" *ngIf="type == 'coach'">
-          <button class="btn btn-success submit-btn" (click)="submitCoach()">Submit</button>
-        </div>
-        <div class="row" *ngIf="type == 'user'">
-          <button class="btn btn-success submit-btn" (click)="submitUser()">Submit</button>
-        </div>
-        <div class="row text-danger" [hidden]="errorStatus">
-          Please check ID and Password
-        </div> -->
+            
             <div class="d-flex justify-content-center">
-                <button type="submit" (click)="userregister()" class="btn btn-success submit-btn">Register</button>
+                <button [disabled]="!userregisterForm.valid" type="submit" (click)="userregister()" class="btn btn-success submit-btn">Register</button>
             </div>
         </form>
 
@@ -126,14 +114,15 @@
                 <div class="col-sm-6">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" formControlName="name">
-                    <p *ngIf="coachregisterForm.controls.name.touched && coachregisterForm.controls.name.errors" 
-                    class="error-message">The name should have 3 to 50 characters
+                    <p *ngIf="coachregisterForm.controls.name.touched && coachregisterForm.controls.name.errors"
+                        class="error-message">The name should have 3 to 50 characters
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <label for="password">Password</label>
                     <input type="text" class="form-control" id="password" formControlName="password">
-                    <p *ngIf="coachregisterForm.controls.password.touched && coachregisterForm.controls.password.errors" class="error-message">Please
+                    <p *ngIf="coachregisterForm.controls.password.touched && coachregisterForm.controls.password.errors"
+                        class="error-message">Please
                         Password should have 5 to 10 characters</p>
                 </div>
             </div>
@@ -141,7 +130,8 @@
                 <div class="col-sm-6">
                     <label for="date_of_birth">Date Of Birth</label>
                     <input type="date" class="form-control" id="date_of_birth" formControlName="date_of_birth">
-                    <p *ngIf="coachregisterForm.controls.date_of_birth.touched && coachregisterForm.controls.date_of_birth.errors" class="error-message">	
+                    <p *ngIf="coachregisterForm.controls.date_of_birth.touched && coachregisterForm.controls.date_of_birth.errors"
+                        class="error-message">
                         Age should be between 20 and 100 years</p>
                 </div>
                 <div class="col-sm-6">
@@ -158,8 +148,8 @@
                             <label class="form-check-label">Female</label>
                         </div>
                     </div>
-                    <p *ngIf="coachregisterForm.controls.gender.touched && coachregisterForm.controls.gender.errors" 
-                    class="error-message">Field required
+                    <p *ngIf="coachregisterForm.controls.gender.touched && coachregisterForm.controls.gender.errors"
+                        class="error-message">Field required
                     </p>
                 </div>
             </div>
@@ -167,20 +157,55 @@
                 <div class="col-sm-6">
                     <label for="mobile_number">Mobile Number</label>
                     <input type="text" class="form-control" id="mobile_number" formControlName="mobile_number">
-                    <p *ngIf="coachregisterForm.controls.mobile_number.touched && coachregisterForm.controls.mobile_number.errors" 
-                    class="error-message">Mobile Number should have 10 digits</p>
+                    <p *ngIf="coachregisterForm.controls.mobile_number.touched && coachregisterForm.controls.mobile_number.errors"
+                        class="error-message">Mobile Number should have 10 digits</p>
                 </div>
                 <div class="col-sm-6">
                     <label for="speciality">Speciality</label>
                     <input type="text" class="form-control" id="speciality" formControlName="speciality">
-                    <p *ngIf="coachregisterForm.controls.speciality.touched && coachregisterForm.controls.speciality.errors" 
-                    class="error-message">Specialty should have 10 to 50 characters</p>
+                    <p *ngIf="coachregisterForm.controls.speciality.touched && coachregisterForm.controls.speciality.errors"
+                        class="error-message">Specialty should have 10 to 50 characters</p>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit" (click)="coachregister()" class="btn btn-success submit-btn">Register</button>
+                <button [disabled]="!coachregisterForm.valid" type="submit" (click)="coachregister()" class="btn btn-success submit-btn">Register</button>
             </div>
         </form>
     </div>
     {{successMessage}}
+    
+</div>
+<div *ngIf="isCoachRegister||isUserRegister">
+    <div>
+        <div *ngIf="type == 'coach'">
+            <div class="d-flex justify-content-center">
+                <img class="card-img-top" src="assets/Images/Life Coach LogIn.jpg" alt="Card image cap">
+            </div>
+            <div class="d-flex justify-content-center" >
+                <label>You are a Couch Now</label>
+            </div>
+            <div class="d-flex justify-content-center" >
+                <label>User id :{{coachId}}</label>
+            </div>
+            <div class="d-flex justify-content-center" >
+                <button type="button" (click)="gotocoachlogin()" class="btn btn-primary submit-btn">Login now</button>
+            </div>
+        </div>
+        <div *ngIf="type =='user'">
+            <div class="d-flex justify-content-center" >
+                <img class="card-img-top" src="assets/Images/User LogIn.jpg" alt="Card image cap">
+            </div>
+            <div class="d-flex justify-content-center" >
+                <label>Account Created Successfully</label>
+            </div>
+            <div class="d-flex justify-content-center" >
+                <label>User id :{{userId}}</label>
+            </div>
+            <div class="d-flex justify-content-center" >
+                <button type="button" (click)="gotouserlogin()" class="btn btn-primary submit-btn">Login now</button>
+            </div>
+            
+        </div>
+        
+    </div>
 </div>
